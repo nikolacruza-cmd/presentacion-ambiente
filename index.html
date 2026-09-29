@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Identificación y reporte de condiciones y actos que afectan el medio ambiente</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg1:#f3e8ff;--bg2:#d9f7ec;--bg3:#ffe6ef;--ink:#2b1f4a;--mut:#63568a;--card:#ffffffcc;--edge:#2b1f4a;--a:#ff4fa3;--p1:#ffe0f0;--p2:#d8f8ef;--p3:#fff4c9;--p4:#e2e0ff;--th:#8b5cf6;--thc:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg1:#1a1035;--bg2:#0d2a2c;--bg3:#2b1030;--ink:#f4efff;--mut:#bcaee6;--card:#241a4acc;--edge:#f4efff;--p1:#3a1a4a;--p2:#123a3a;--p3:#3a3414;--p4:#22225a;--thc:#1a1035}}
+:root[data-theme="dark"]{--bg1:#1a1035;--bg2:#0d2a2c;--bg3:#2b1030;--ink:#f4efff;--mut:#bcaee6;--card:#241a4acc;--edge:#f4efff;--p1:#3a1a4a;--p2:#123a3a;--p3:#3a3414;--p4:#22225a;--thc:#1a1035}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+html,body{height:100%;margin:0}
+body{background:var(--bg1);background:linear-gradient(135deg,var(--bg1),var(--bg2) 50%,var(--bg3));color:var(--ink);font:600 clamp(14px,1.55vw,18px)/1.55 Nunito,system-ui,sans-serif;overflow:hidden}
+body:before,body:after{content:"";position:fixed;border-radius:50%;z-index:0;pointer-events:none;filter:blur(2px)}
+body:before{width:38vmin;height:38vmin;right:-9vmin;top:-9vmin;background:var(--a);opacity:.35;transition:background .5s}
+body:after{width:26vmin;height:26vmin;left:-8vmin;bottom:8vmin;background:#21e6d1;opacity:.3}
+.s{display:none;position:relative;z-index:1;height:100%;box-sizing:border-box;padding:4vh 6vw 10vh;overflow-y:auto;max-width:1100px;margin:0 auto}
+.s.on{display:block}
+h1,h2{font-family:Fredoka,"Trebuchet MS",sans-serif;color:var(--ink);line-height:1.1;margin:0 0 .7em}
+h1{font-size:clamp(30px,5.4vw,58px);background:linear-gradient(90deg,#ff4fa3,#8b5cf6,#21c9e6);-webkit-background-clip:text;background-clip:text;color:transparent}
+h2{font-size:clamp(22px,3.2vw,36px);display:inline-block;background:var(--a);color:#2b1f4a;padding:.2em .7em;border-radius:999px;border:3px solid var(--edge);box-shadow:4px 4px 0 var(--edge);transition:background .4s}
+h3{margin:0 0 .3em;font:600 1.12em Fredoka,sans-serif;color:var(--ink)}
+ul{margin:.2em 0;padding-left:1.2em}li{margin:.3em 0}li::marker{color:var(--a);font-size:1.2em}
+.g{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.c{background:var(--p1);border:3px solid var(--edge);box-shadow:5px 5px 0 var(--edge);padding:14px 18px;border-radius:20px}
+.g>.c:nth-child(4n+2){background:var(--p2)}.g>.c:nth-child(4n+3){background:var(--p3)}.g>.c:nth-child(4n+4){background:var(--p4)}
+.note{color:var(--mut);font-size:.92em;margin-top:1em;background:var(--card);padding:8px 14px;border-radius:14px;border:2px dashed var(--a)}
+table{border-collapse:separate;border-spacing:0;width:100%;font-size:.92em;background:var(--card);border:3px solid var(--edge);border-radius:18px;overflow:hidden;box-shadow:5px 5px 0 var(--edge)}
+th,td{padding:8px 12px;text-align:left;vertical-align:top;border-bottom:2px solid #8b5cf633}
+tr:last-child td{border-bottom:0}th{background:var(--th);color:var(--thc);font-family:Fredoka,sans-serif;font-weight:600}
+tr:nth-child(even) td{background:var(--p2)}tr:nth-child(odd) td{background:var(--p1)}
+.f{display:flex;flex-wrap:wrap;gap:12px;margin:.8em 0}.f div{flex:1 1 140px;background:var(--p3);border:3px solid var(--edge);box-shadow:4px 4px 0 var(--edge);padding:10px 12px;border-radius:18px;font-size:.92em}
+.f div:nth-child(3n+2){background:var(--p2)}.f div:nth-child(3n+3){background:var(--p4)}.f b{display:block;font:600 1.1em Fredoka,sans-serif;margin-bottom:.15em}
+.nav{position:fixed;z-index:5;left:0;right:0;bottom:0;display:flex;justify-content:space-between;align-items:center;padding:8px 5vw calc(8px + env(safe-area-inset-bottom,0px));background:var(--card);backdrop-filter:blur(8px);border-top:3px solid var(--edge)}
+.nav button{font:600 1em Fredoka,sans-serif;background:var(--a);color:#2b1f4a;border:3px solid var(--edge);box-shadow:3px 3px 0 var(--edge);padding:6px 20px;border-radius:999px;cursor:pointer;transition:transform .1s,background .4s}.nav button:active{transform:translate(3px,3px);box-shadow:none}.nav button:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
+.ref li{margin:.45em 0;font-size:.92em}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+
+<section class="s on">
+<h1>Identificación y reporte de condiciones y actos que afectan la protección del medio ambiente</h1>
+<p style="font-family:Fredoka,'Trebuchet MS',sans-serif;font-weight:600;font-size:1.25em;color:var(--ink);margin:0 0 1em">Nikol Alejandra Cruz Arciniegas<br>Nikol Natalia Zambrano Piñeros</p>
+<p style="font-size:1.2em;max-width:34em">Un enfoque desde los lineamientos del contexto organizacional y social: cómo detectar, valorar, reportar y tratar lo que puede dañar el entorno.</p>
+<p class="note">Gestión ambiental organizacional · Marco ISO 14001:2015 y normativa colombiana · Use las flechas del teclado o los botones para avanzar.</p>
+</section>
+
+<section class="s"><h2>Objetivos y alcance</h2>
+<div class="g"><div class="c"><h3>Objetivo general</h3>Comprender cómo una organización identifica y reporta condiciones y actos que puedan afectar el ambiente, alineando su gestión con su contexto y con las expectativas sociales y legales.</div>
+<div class="c a"><h3>Objetivos específicos</h3><ul><li>Diferenciar condición ambiental adversa y acto ambientalmente inseguro.</li><li>Relacionar el contexto organizacional con la detección de riesgos.</li><li>Aplicar métodos de identificación y criterios de significancia.</li><li>Diseñar un flujo de reporte con responsables y seguimiento.</li></ul></div></div>
+<p class="note">Alcance: organizaciones de cualquier tamaño y sector; los ejemplos normativos corresponden a Colombia.</p></section>
+
+<section class="s"><h2>Marco conceptual: condiciones y actos</h2>
+<div class="g"><div class="c"><h3>Condición que afecta el ambiente</h3><p>Estado físico, técnico o del entorno que puede causar o agravar un impacto ambiental, independiente de quién lo genere.</p><ul><li>Tanque sin dique de contención.</li><li>Vertimientos sin tratamiento adecuado.</li><li>Residuos peligrosos sin almacenamiento apto.</li><li>Equipos con fugas o emisiones fuera de norma.</li></ul></div>
+<div class="c a"><h3>Acto que afecta el ambiente</h3><p>Acción u omisión humana que genera o puede generar un impacto negativo, por descuido, desconocimiento o incumplimiento.</p><ul><li>Mezclar residuos peligrosos con ordinarios.</li><li>Verter aceites al alcantarillado.</li><li>Dejar equipos encendidos sin necesidad.</li><li>Omitir el registro de un derrame menor.</li></ul></div></div>
+<p class="note">Un acto inseguro suele tener detrás una condición latente (falta de capacitación, señalización, procedimientos o recursos). Por eso se reportan y analizan ambos.</p></section>
+
+<section class="s"><h2>Contexto de la organización (ISO 14001, cláusula 4)</h2>
+<div class="f"><div><b>4.1 Contexto</b>Cuestiones internas y externas que afectan el desempeño ambiental.</div><div><b>4.2 Partes interesadas</b>Necesidades y expectativas; algunas se vuelven requisitos obligatorios.</div><div><b>4.3 Alcance</b>Límites del sistema de gestión ambiental.</div><div><b>4.4 Sistema</b>Procesos necesarios y su interacción.</div></div>
+<table><tr><th>Tipo de cuestión</th><th>Ejemplos que generan condiciones o actos de riesgo</th></tr>
+<tr><td>Externas</td><td>Cambio climático, escasez hídrica, normativa cambiante, ecosistemas cercanos (páramos, fuentes de agua), presión de la comunidad.</td></tr>
+<tr><td>Internas</td><td>Cultura organizacional, antigüedad de la infraestructura, rotación de personal, presupuesto, nivel de competencia ambiental.</td></tr></table>
+<p class="note">Analizar el contexto orienta <em>dónde mirar</em> al inspeccionar: define qué condiciones y actos son más probables y más graves.</p></section>
+
+<section class="s"><h2>Partes interesadas y contexto social</h2>
+<table><tr><th>Parte interesada</th><th>Expectativa frecuente</th><th>Vía de reporte o interacción</th></tr>
+<tr><td>Comunidad vecina</td><td>Sin ruido, olores ni contaminación de fuentes de agua</td><td>Quejas, mesas de diálogo, buzón comunitario</td></tr>
+<tr><td>Trabajadores y contratistas</td><td>Ambiente sano, formación, canal seguro</td><td>Formato de reporte, comités, inspecciones</td></tr>
+<tr><td>Autoridad ambiental</td><td>Cumplimiento de permisos y reporte oportuno</td><td>Informes, visitas, reportes de incidentes</td></tr>
+<tr><td>Clientes e inversionistas</td><td>Debida diligencia y trazabilidad ambiental</td><td>Informes de sostenibilidad, auditorías</td></tr>
+<tr><td>Ambiente y futuras generaciones</td><td>Conservación de recursos</td><td>Metas, indicadores, compromisos voluntarios</td></tr></table>
+<p class="note">Cuando la organización decide adoptar una expectativa social como compromiso, esta pasa a ser un requisito que debe gestionar y verificar (ISO 14001, 6.1.3).</p></section>
+
+<section class="s"><h2>Marco normativo colombiano esencial</h2>
+<div class="g"><div class="c"><h3>Base constitucional y general</h3><ul><li>Constitución Política de 1991, arts. 79 y 80: ambiente sano y deber estatal de prevención y control del deterioro.</li><li>Ley 99 de 1993: crea el Sistema Nacional Ambiental y el Ministerio de Ambiente.</li><li>Decreto 1076 de 2015: decreto único reglamentario del sector ambiente.</li></ul></div>
+<div class="c a"><h3>Control, sanción y participación</h3><ul><li>Ley 1333 de 2009: procedimiento sancionatorio ambiental (multas, cierre, decomiso, suspensión de obra o actividad).</li><li>Ley 2111 de 2021: incorpora delitos ambientales al Código Penal.</li><li>Ley 1259 de 2008: comparendo ambiental.</li><li>Ley 2273 de 2022: aprueba el Acuerdo de Escazú (acceso a información, participación y justicia ambiental).</li></ul></div></div>
+<p class="note">Verificar siempre la versión vigente y las normas sectoriales y municipales aplicables (vertimientos, emisiones, residuos, ruido, fauna y flora).</p></section>
+
+<section class="s"><h2>Aspectos e impactos ambientales</h2>
+<p>El <b>aspecto</b> es el elemento de la actividad que interactúa con el ambiente; el <b>impacto</b> es el cambio resultante, adverso o benéfico. Se evalúan bajo condiciones normales, anormales y de emergencia, considerando la perspectiva de ciclo de vida.</p>
+<table><tr><th>Actividad</th><th>Aspecto</th><th>Impacto</th></tr>
+<tr><td>Mantenimiento de maquinaria</td><td>Generación de aceites usados</td><td>Contaminación de suelo y agua</td></tr>
+<tr><td>Procesos con caldera o generador</td><td>Emisiones atmosféricas</td><td>Deterioro de la calidad del aire</td></tr>
+<tr><td>Uso de agua en procesos</td><td>Consumo y vertimiento</td><td>Agotamiento del recurso, carga contaminante</td></tr>
+<tr><td>Oficinas y logística</td><td>Consumo energético y residuos</td><td>Emisiones de gases de efecto invernadero</td></tr></table></section>
+
+<section class="s"><h2>Métodos para identificar condiciones y actos</h2>
+<div class="g"><div class="c"><h3>Inspecciones planeadas</h3>Listas de verificación por área: residuos, químicos, vertimientos, energía, orden y aseo.</div>
+<div class="c"><h3>Observación de comportamientos</h3>Rondas breves que registran actos seguros e inseguros, con retroalimentación inmediata.</div>
+<div class="c a"><h3>Matriz de aspectos e impactos</h3>Herramienta central para priorizar y actualizar ante cambios de proceso.</div>
+<div class="c"><h3>Monitoreo y medición</h3>Caracterizaciones de vertimientos, emisiones, ruido, consumos y registros de pesaje de residuos.</div>
+<div class="c"><h3>Auditorías internas y externas</h3>Contrastan la práctica con procedimientos, permisos y requisitos legales.</div>
+<div class="c a"><h3>Participación y quejas</h3>Reportes de trabajadores, comunidad y contratistas; análisis de incidentes previos.</div></div></section>
+
+<section class="s"><h2>Ejemplos por área de gestión</h2>
+<table><tr><th>Área</th><th>Condición adversa</th><th>Acto inadecuado</th></tr>
+<tr><td>Residuos</td><td>Contenedores sin tapa ni código de colores</td><td>Disponer residuos peligrosos en la ruta ordinaria</td></tr>
+<tr><td>Agua</td><td>Trampa de grasas saturada; tuberías con fugas</td><td>Lavar equipos con químicos sobre sumideros</td></tr>
+<tr><td>Aire y ruido</td><td>Ductos sin mantenimiento; equipos sin aislamiento acústico</td><td>Quemar residuos; operar motores sin necesidad</td></tr>
+<tr><td>Sustancias químicas</td><td>Sin hojas de seguridad, sin dique ni kit antiderrames</td><td>Trasvasar sin embudo o sin elementos de protección</td></tr>
+<tr><td>Recursos naturales</td><td>Captación de agua sin permiso; cercanía a rondas hídricas</td><td>Tala o intervención de vegetación sin autorización</td></tr></table>
+<p class="note">Cada hallazgo debe quedar registrado con evidencia (fotografía, medición, testigo) y ubicación exacta.</p></section>
+
+<section class="s"><h2>Valoración de la significancia</h2>
+<p>No todo hallazgo tiene la misma prioridad. Se define una escala y se puntúa cada criterio para establecer un nivel de significancia.</p>
+<div class="g"><div class="c"><h3>Criterios de impacto</h3><ul><li><b>Severidad:</b> magnitud del daño potencial.</li><li><b>Extensión:</b> puntual, local o regional.</li><li><b>Reversibilidad:</b> recuperable o permanente.</li><li><b>Recurso afectado:</b> agua, suelo, aire, biodiversidad.</li></ul></div>
+<div class="c a"><h3>Criterios de gestión</h3><ul><li><b>Frecuencia o probabilidad</b> de ocurrencia.</li><li><b>Requisito legal:</b> incumplimiento o cercanía al límite permitido.</li><li><b>Preocupación de partes interesadas</b> y riesgo reputacional.</li><li><b>Capacidad de control</b> existente.</li></ul></div></div>
+<p class="note">Ejemplo de uso: significancia = severidad × probabilidad, con criterios que elevan automáticamente el nivel cuando hay incumplimiento legal o queja social.</p></section>
+
+<section class="s"><h2>Proceso de reporte</h2>
+<div class="f"><div><b>1. Detectar</b>Quien observa el hecho lo identifica y, si es seguro, lo contiene.</div><div><b>2. Reportar</b>Formato físico o digital, correo o línea interna, sin demora.</div><div><b>3. Registrar y clasificar</b>El responsable ambiental valora la significancia.</div><div><b>4. Actuar</b>Acción inmediata y, si aplica, plan correctivo.</div><div><b>5. Comunicar</b>Informar a la alta dirección y, si corresponde, a la autoridad.</div><div><b>6. Verificar y cerrar</b>Se comprueba la eficacia y se aprende.</div></div>
+<p class="note">Principios: reporte oportuno (en el turno o en 24 horas para hallazgos relevantes), canal accesible y anonimato posible, y ninguna represalia contra quien reporta de buena fe.</p></section>
+
+<section class="s"><h2>Contenido mínimo del reporte</h2>
+<div class="g"><div class="c"><h3>Datos del evento</h3><ul><li>Fecha, hora y lugar exacto.</li><li>Tipo: condición, acto, incidente o casi incidente.</li><li>Descripción objetiva de lo observado.</li><li>Recurso afectado y magnitud estimada.</li></ul></div>
+<div class="c a"><h3>Gestión del evento</h3><ul><li>Evidencias (fotos, mediciones, testigos).</li><li>Acción inmediata tomada.</li><li>Causa aparente y factores contribuyentes.</li><li>Responsable, fecha compromiso y estado.</li></ul></div></div>
+<p class="note">Buena práctica: describir hechos y no culpables. El objetivo es corregir el sistema, no sancionar a la persona que informa.</p></section>
+
+<section class="s"><h2>Roles y responsabilidades</h2>
+<table><tr><th>Rol</th><th>Responsabilidad principal</th></tr>
+<tr><td>Alta dirección</td><td>Liderazgo, política ambiental, recursos y cierre de hallazgos críticos</td></tr>
+<tr><td>Responsable ambiental</td><td>Mantener la matriz, analizar reportes, coordinar acciones y reportes legales</td></tr>
+<tr><td>Jefes y supervisores</td><td>Inspeccionar su área, garantizar corrección y reforzar comportamientos</td></tr>
+<tr><td>Trabajadores y contratistas</td><td>Cumplir procedimientos, reportar y detener actividades de riesgo</td></tr>
+<tr><td>Comité o brigada de emergencias</td><td>Respuesta a derrames, incendios y otras emergencias ambientales</td></tr></table></section>
+
+<section class="s"><h2>Tratamiento: de la contención a la prevención</h2>
+<div class="g"><div class="c"><h3>Corrección inmediata</h3>Contener, limpiar o aislar. Ejemplo: usar kit antiderrames y confinar el área.</div>
+<div class="c a"><h3>Acción correctiva</h3>Analizar la causa raíz (5 porqués, diagrama causa-efecto) y eliminarla para evitar recurrencia (ISO 14001, 10.2).</div>
+<div class="c"><h3>Acción preventiva y mejora</h3>Rediseñar procesos, sustituir insumos, capacitar y actualizar controles operacionales.</div></div>
+<p><b>Jerarquía de control:</b> eliminar la fuente, sustituir por alternativas menos dañinas, aplicar controles de ingeniería, procedimientos y señalización, y por último protección y compensación.</p>
+<p class="note">Preparación y respuesta ante emergencias (8.2): planes, simulacros y contactos con autoridades, bomberos y entes ambientales.</p></section>
+
+<section class="s"><h2>Cultura, formación y participación social</h2>
+<div class="g"><div class="c"><h3>Cultura interna</h3><ul><li>Inducción y refuerzos sobre aspectos significativos.</li><li>Reconocimiento a reportes preventivos.</li><li>Política explícita de no represalias.</li><li>Comunicación interna clara (ISO 14001, 7.4).</li></ul></div>
+<div class="c a"><h3>Relación con la comunidad</h3><ul><li>Canales visibles de quejas y respuesta con plazos.</li><li>Transparencia en información ambiental.</li><li>Diálogo con juntas de acción comunal y autoridades locales.</li><li>Proyectos conjuntos de conservación.</li></ul></div></div>
+<p class="note">La confianza social se construye con coherencia: lo que se promete en la política debe verse en las operaciones.</p></section>
+
+<section class="s"><h2>Seguimiento: indicadores</h2>
+<table><tr><th>Indicador</th><th>Qué mide</th></tr>
+<tr><td>Reportes por cada 100 trabajadores</td><td>Participación y cultura de reporte (más reportes preventivos suele ser señal positiva)</td></tr>
+<tr><td>% de hallazgos cerrados a tiempo</td><td>Eficacia de la gestión correctiva</td></tr>
+<tr><td>Recurrencia de hallazgos</td><td>Calidad del análisis de causa raíz</td></tr>
+<tr><td>Cumplimiento de requisitos legales</td><td>Nivel de exposición a sanciones</td></tr>
+<tr><td>Quejas comunitarias atendidas</td><td>Relación con partes interesadas</td></tr>
+<tr><td>Consumo de agua, energía y residuos por unidad producida</td><td>Desempeño ambiental (véanse también estándares GRI 300)</td></tr></table>
+<p class="note">Los resultados se revisan en la revisión por la dirección (9.3) para decidir mejoras y asignar recursos.</p></section>
+
+<section class="s"><h2>Consecuencias de no identificar ni reportar</h2>
+<div class="g"><div class="c"><h3>Legales</h3><ul><li>Proceso sancionatorio (Ley 1333 de 2009) con multas, cierre o suspensión de actividades.</li><li>Posible responsabilidad penal en delitos ambientales (Ley 2111 de 2021).</li><li>Obligación de reparar el daño causado.</li></ul></div>
+<div class="c a"><h3>Sociales y económicas</h3><ul><li>Pérdida de licencia social y conflictos con la comunidad.</li><li>Daño reputacional y pérdida de clientes.</li><li>Costos de remediación mayores que los de prevención.</li></ul></div></div>
+<p class="note">La detección temprana y el reporte oportuno suelen ser el factor que reduce la gravedad de un evento y demuestra debida diligencia.</p></section>
+
+<section class="s"><h2>Conclusiones</h2>
+<ul><li>Identificar y reportar condiciones y actos ambientales exige comprender primero el <b>contexto</b> y las <b>partes interesadas</b> de la organización.</li>
+<li>Condición y acto están conectados: corregir solo el acto sin atender la condición no evita la recurrencia.</li>
+<li>Los métodos (inspecciones, matriz, monitoreo, auditorías, participación) deben combinarse y valorarse con criterios de significancia claros.</li>
+<li>Un flujo de reporte simple, sin represalias y con seguimiento convierte la información en mejora continua.</li>
+<li>La gestión preventiva protege el ambiente, reduce riesgos legales y fortalece la licencia social para operar.</li></ul></section>
+
+<section class="s ref"><h2>Referencias</h2>
+<ul>
+<li>Congreso de la República de Colombia. (1993). <i>Ley 99 de 1993, por la cual se crea el Ministerio del Medio Ambiente y el Sistema Nacional Ambiental (SINA)</i>.</li>
+<li>Congreso de la República de Colombia. (2009). <i>Ley 1333 de 2009, por la cual se establece el procedimiento sancionatorio ambiental</i>.</li>
+<li>Congreso de la República de Colombia. (2008). <i>Ley 1259 de 2008, por medio de la cual se instaura en el territorio nacional la aplicación del comparendo ambiental</i>.</li>
+<li>Congreso de la República de Colombia. (2021). <i>Ley 2111 de 2021, por medio de la cual se sustituye el Título XI de la Ley 599 de 2000 (delitos contra los recursos naturales y el medio ambiente)</i>.</li>
+<li>Congreso de la República de Colombia. (2022). <i>Ley 2273 de 2022, por medio de la cual se aprueba el Acuerdo de Escazú</i>.</li>
+<li>Asamblea Nacional Constituyente. (1991). <i>Constitución Política de Colombia</i>, arts. 79 y 80.</li>
+<li>Ministerio de Ambiente y Desarrollo Sostenible. (2015). <i>Decreto 1076 de 2015, Decreto Único Reglamentario del Sector Ambiente y Desarrollo Sostenible</i>.</li>
+<li>ICONTEC / ISO. (2015). <i>NTC-ISO 14001:2015. Sistemas de gestión ambiental. Requisitos con orientación para su uso</i>.</li>
+<li>ISO. (2018). <i>ISO 31000:2018. Gestión del riesgo. Directrices</i>.</li>
+<li>ISO. (2010). <i>ISO 26000:2010. Guía de responsabilidad social</i>.</li>
+<li>Global Reporting Initiative. (2016). <i>GRI 300: Temas ambientales (Estándares GRI)</i>.</li>
+</ul>
+</section>
+
+<div class="nav"><button id="p">Anterior</button><span id="n"></span><button id="x">Siguiente</button></div>
+<script>
+const S=[...document.querySelectorAll('.s')];let i=0;
+function go(k){i=Math.max(0,Math.min(S.length-1,k));S.forEach((s,j)=>s.classList.toggle('on',j===i));S[i].scrollTop=0;
+const C=['#ff4fa3','#21e6d1','#b6ff3b','#a78bfa','#ffb347','#5cc8ff'],E=['🌍','🎯','🔍','🏢','🤝','⚖️','🌱','🧪','📋','📊','🔄','📝','👥','🛠️','💬','📈','🚨','✅','📚'];
+document.documentElement.style.setProperty('--a',C[i%C.length]);
+const hd=S[i].querySelector('h2');if(hd&&!hd.dataset.e){hd.dataset.e=1;hd.textContent=E[i%E.length]+' '+hd.textContent}document.getElementById('n').textContent=(i+1)+' / '+S.length}
+p.onclick=()=>go(i-1);x.onclick=()=>go(i+1);
+addEventListener('keydown',e=>{if(['ArrowRight','PageDown',' '].includes(e.key)){e.preventDefault();go(i+1)}if(['ArrowLeft','PageUp'].includes(e.key))go(i-1)});
+let t0=0;addEventListener('touchstart',e=>t0=e.touches[0].clientX);addEventListener('touchend',e=>{const d=e.changedTouches[0].clientX-t0;if(Math.abs(d)>60)go(i+(d<0?1:-1))});
+go(0);
+</script></body></html>
